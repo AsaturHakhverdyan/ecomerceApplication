@@ -1,0 +1,52 @@
+footer{
+    width: 100%;
+    background-color: #474747;
+    display: flex;
+    justify-content: space-around;
+    padding: 35px 0;
+    h6{
+        font-size: 14px;
+        cursor: pointer;
+        padding: 5px 0;
+        color: #CBCBCB;
+        &:hover{
+            color: #FB016F;
+        }
+    }
+    h5{
+        font-size: 16px;
+        cursor: pointer;
+        color: #f8e9e9;
+        padding: 10px 0;
+        &:hover{
+            color: #1b1316;
+        }
+    }
+    
+    .informaiton{
+        
+        .icons{
+            font-size: 30px;
+            margin:5px;
+            color:#FB016F;
+            opacity: 1;
+            &:hover{
+                opacity: 0.5;
+            }
+        }
+        img{
+            max-width: 40px;
+            padding: 5px;
+        }
+       
+    }
+}
+
+@media screen and (max-width: 560px){
+    footer{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    
+}

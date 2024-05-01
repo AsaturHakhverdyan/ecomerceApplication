@@ -1,0 +1,19 @@
+
+.cButton{
+    margin: 5px 30px;
+    background-color: #5e5b5b;
+    border-radius: 8px;
+    border: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    color: #fc75ae;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    &:hover{
+        
+        background-color: #EE2C7D;
+        transform: scale(1.1);
+        color: #fff;
+
+    }
+}

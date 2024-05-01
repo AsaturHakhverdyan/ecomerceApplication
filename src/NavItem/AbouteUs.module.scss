@@ -1,0 +1,37 @@
+.flexible{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px;
+   
+    img{
+        width: 500px;
+        border-radius: 51px;
+    }
+    p{
+        font-size: 20px;
+        font-style: italic;
+        text-align: center;
+    }
+}
+.contentAbouteus{
+    width: 100%;
+    .topimg{
+        width: 100%;
+        padding: 20px;
+    }
+    h2{
+        margin: 20px;
+        color: rgb(74, 71, 67);
+    }
+}
+
+@media screen and (max-width: 560px){
+   .flexible{
+    img{
+        width: 300px;
+    }
+   }
+    
+}

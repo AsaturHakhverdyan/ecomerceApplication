@@ -1,0 +1,90 @@
+.services{
+    width: 100%;
+    
+   h1{
+        color: #333333;
+        font-size: 40px;
+        animation: anime 1s infinite;
+        text-align: center;
+        @keyframes anime {
+            from{
+            color: #333333;
+
+            }
+            to{
+                color: #EE2C7D;
+
+            }
+        }
+   }
+   h2{
+    padding: 10px 0;
+    color: #333333;
+    font-size: 30px;
+    padding: 30px;
+   }
+   .servicesInfo{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    div{
+        padding: 25px;
+        p{
+            text-align: center;
+            
+        }
+        .top{
+            font-weight: bold;
+            font-size: 20px;
+        }
+    }
+   }
+   .info{
+    width: 100%;
+    display: flex;
+    padding: 25px;
+    gap: 15px;
+        img{
+            width: 50%;
+            height: 50vh;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: 0.7s;
+            opacity: 0.8;
+            cursor: pointer;
+            &:hover{
+                opacity: 1;
+            }
+        }
+        p{
+            line-height: 1.6;
+            margin-top:5%;
+        }
+
+
+   }
+}
+
+@media screen and (max-width: 560px){
+    .info{
+     img{
+         width: 300px;
+     }
+     p{
+        font-size: 17px;
+        
+     }
+    
+    
+    }
+    .services{
+        h1{
+            font-size: 24px;
+        }
+        h2{
+            font-size: 20px;
+        }
+    }
+  
+     
+ }
