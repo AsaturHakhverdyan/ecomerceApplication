@@ -20,7 +20,7 @@ function Main() {
 	useEffect(() => {
 		(async () => {
 			const { data } = await axios.get(
-				`https://payl.10web.cloud/wp-json/get/products?order=${sort}&orderby=${sortByPrice}`
+				`https://payl-dev.10web.cloud/wp-json/get/products?order=${sort}&orderby=${sortByPrice}`
 			);
 			setFilteredData(data.products);
 			setData(data.products);
@@ -30,7 +30,7 @@ function Main() {
 	useEffect(() => {
 		(async () => {
 			const { data } = await axios.get(
-				"https://payl.10web.cloud/wp-json/product/categories"
+				"https://payl-dev.10web.cloud/wp-json/product/categories"
 			);
 			setSetCategories(data);
 		})();

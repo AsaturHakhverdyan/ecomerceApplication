@@ -21,7 +21,7 @@ export const ProductItem = ({ product, index }) => {
 			let nonce = await getNonce();
 			if (nonce) {
 				await axios.post(
-					`https://payl.10web.cloud/wp-json/wc/store/v1/cart/add-item?cookie=${jwt_cookie}`,
+					`https://payl-dev.10web.cloud/wp-json/wc/store/v1/cart/add-item?cookie=${jwt_cookie}`,
 					{
 						id: product.id,
 						quantity: 1,

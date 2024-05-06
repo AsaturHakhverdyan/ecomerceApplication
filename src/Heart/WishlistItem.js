@@ -16,7 +16,7 @@ export const WishlistItem = ({ item, setHeratSelect }) => {
 			let nonce = await getNonce();
 			if (nonce) {
 				const { data } = await axios.post(
-					`https://payl.10web.cloud/wp-json/wc/store/v1/cart/remove-item?cookie=${jwt_cookie}`,
+					`https://payl-dev.10web.cloud/wp-json/wc/store/v1/cart/remove-item?cookie=${jwt_cookie}`,
 					{ key },
 					{
 						headers: {

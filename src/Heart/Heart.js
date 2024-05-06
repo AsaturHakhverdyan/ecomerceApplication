@@ -12,7 +12,7 @@ const Heart = () => {
 		(async () => {
 			try {
 				const { data } = await axios.get(
-					`https://payl.10web.cloud/wp-json/wc/store/v1/cart?cookie=${jwt_cookie}`
+					`https://payl-dev.10web.cloud/wp-json/wc/store/v1/cart?cookie=${jwt_cookie}`
 				);
 				if (!data) {
 					return;

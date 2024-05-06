@@ -10,7 +10,7 @@ function Product({ pathname }) {
 		let id = pathname.split("/").join("");
 		(async () => {
 			const { data } = await axios.get(
-				`https://payl.10web.cloud/wp-json/single/product?id=${id}`
+				`https://payl-dev.10web.cloud/wp-json/single/product?id=${id}`
 			);
 			setCurrentItem(data);
 		})();

@@ -16,7 +16,7 @@ export const Login = () => {
 		if (login !== "" && password !== "") {
 			try {
 				const { data } = await axios.post(
-					`https://payl.10web.cloud/wp-json/user-route/generate_auth_cookie/?email=${login}&password=${password}`
+					`https://payl-dev.10web.cloud/wp-json/user-route/generate_auth_cookie/?email=${login}&password=${password}`
 				);
 				if (data?.cookie) {
 					navigate("/");
