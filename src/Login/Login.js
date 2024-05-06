@@ -3,7 +3,7 @@ import s from "./login.module.scss";
 import axios from "axios";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { LOCAL_STORAGE_KEYS } from "../constants/constatns";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 export const Login = () => {
 	const [login, setLogin] = useState("");
@@ -18,7 +18,6 @@ export const Login = () => {
 				const { data } = await axios.post(
 					`https://payl.10web.cloud/wp-json/user-route/generate_auth_cookie/?email=${login}&password=${password}`
 				);
-				console.log(data.cookie, "data");
 				if (data?.cookie) {
 					navigate("/");
 					localStorage.setItem(LOCAL_STORAGE_KEYS.JWT_COOKIE, data.cookie);
