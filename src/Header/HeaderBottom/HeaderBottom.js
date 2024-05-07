@@ -1,5 +1,5 @@
 import s from "../HeaderBottom/HeaderBottom.module.scss";
-import { FaHeart, FaCartPlus, FaUserAlt } from "react-icons/fa";
+import { FaHeart, FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 function HeaderBottom() {
 	return (
@@ -10,9 +10,6 @@ function HeaderBottom() {
 			<div className={s.icons}>
 				<Link to="/heart">
 					<FaHeart className={s.Heart} />
-				</Link>
-				<Link to="/cart">
-					<FaCartPlus className={s.Cart} />
 				</Link>
 				<Link to="/login">
 					<FaUserAlt className={s.User} />

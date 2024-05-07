@@ -4,7 +4,7 @@ import { MdDeleteOutline } from "react-icons/md";
 import Spiner from "../loader/Spiner";
 import { getNonce } from "../utiles/utiles";
 import axios from "axios";
-import { LOCAL_STORAGE_KEYS } from "../constants/constatns";
+import { BASE_URL, LOCAL_STORAGE_KEYS } from "../constants/constatns";
 
 export const WishlistItem = ({ item, setHeratSelect }) => {
 	const [isLoading, setIsLoading] = useState(false);
@@ -16,7 +16,7 @@ export const WishlistItem = ({ item, setHeratSelect }) => {
 			let nonce = await getNonce();
 			if (nonce) {
 				const { data } = await axios.post(
-					`https://payl-dev.10web.cloud/wp-json/wc/store/v1/cart/remove-item?cookie=${jwt_cookie}`,
+					`${BASE_URL}/wp-json/wc/store/v1/cart/remove-item?cookie=${jwt_cookie}`,
 					{ key },
 					{
 						headers: {

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Button from "../Custom/Button";
 import s from "./Product.module.scss";
 import axios from "axios";
+import { BASE_URL, TEL } from "../constants/constatns";
+import { HeartButton } from "../components/HeartButton";
 
 function Product({ pathname }) {
 	const [currentItem, setCurrentItem] = useState([]);
@@ -10,7 +12,7 @@ function Product({ pathname }) {
 		let id = pathname.split("/").join("");
 		(async () => {
 			const { data } = await axios.get(
-				`https://payl-dev.10web.cloud/wp-json/single/product?id=${id}`
+				`${BASE_URL}/wp-json/single/product?id=${id}`
 			);
 			setCurrentItem(data);
 		})();
@@ -27,17 +29,28 @@ function Product({ pathname }) {
 					></img>
 				</div>
 				<div className={s.rightInfo}>
-					<h1>{currentItem?.name}</h1>
-					<h3>{currentItem?.price}֏</h3>
-					<h5>
-						{currentItem?.sale_price ? currentItem?.sale_price + "֏" : ""}
-					</h5>
+					<div>
+						<h1>{currentItem?.name}</h1>
+						<h3>{currentItem?.price}֏</h3>
+						<h5>
+							{currentItem?.sale_price ? currentItem?.sale_price + "֏" : ""}
+						</h5>
+					</div>
+					<div>
+						<p>պատվիրելու համար </p>
+						<p className={s.tel}>
+							<a href="tel:+373 00 00 00">{TEL}</a>
+						</p>
+					</div>
 					<div className={s.instock}>
 						{currentItem.stock_status === "instock" ? (
 							<p>Առկա է</p>
 						) : (
 							<p>Առկա չէ</p>
 						)}
+						<div className={s.btn}>
+							<HeartButton product={currentItem} />
+						</div>
 					</div>
 				</div>
 			</div>

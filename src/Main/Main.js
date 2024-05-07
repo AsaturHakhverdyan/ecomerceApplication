@@ -7,6 +7,7 @@ import { setSearchValue } from "../redux/slices/searchSlice";
 import axios from "axios";
 import { sortingData } from "./constants";
 import { ProductItem } from "./ProductItem";
+import { BASE_URL } from "../constants/constatns";
 
 function Main() {
 	const dispatch = useDispatch();
@@ -20,7 +21,7 @@ function Main() {
 	useEffect(() => {
 		(async () => {
 			const { data } = await axios.get(
-				`https://payl-dev.10web.cloud/wp-json/get/products?order=${sort}&orderby=${sortByPrice}`
+				`${BASE_URL}/wp-json/get/products?order=${sort}&orderby=${sortByPrice}`
 			);
 			setFilteredData(data.products);
 			setData(data.products);
@@ -30,7 +31,7 @@ function Main() {
 	useEffect(() => {
 		(async () => {
 			const { data } = await axios.get(
-				"https://payl-dev.10web.cloud/wp-json/product/categories"
+				`${BASE_URL}/wp-json/product/categories`
 			);
 			setSetCategories(data);
 		})();
@@ -71,6 +72,7 @@ function Main() {
 					filteredData.map((product, index) => {
 						return (
 							<ProductItem
+								key={product.id}
 								product={product}
 								index={index}
 							/>

@@ -1,5 +1,5 @@
 import s from "./Heart.module.scss";
-import { LOCAL_STORAGE_KEYS } from "../constants/constatns";
+import { BASE_URL, LOCAL_STORAGE_KEYS } from "../constants/constatns";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { WishlistItem } from "./WishlistItem";
@@ -12,7 +12,7 @@ const Heart = () => {
 		(async () => {
 			try {
 				const { data } = await axios.get(
-					`https://payl-dev.10web.cloud/wp-json/wc/store/v1/cart?cookie=${jwt_cookie}`
+					`${BASE_URL}/wp-json/wc/store/v1/cart?cookie=${jwt_cookie}`
 				);
 				if (!data) {
 					return;

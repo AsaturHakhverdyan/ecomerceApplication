@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import s from "./login.module.scss";
 import axios from "axios";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-import { LOCAL_STORAGE_KEYS } from "../constants/constatns";
+import { BASE_URL, LOCAL_STORAGE_KEYS } from "../constants/constatns";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
 export const Login = () => {
@@ -16,7 +16,7 @@ export const Login = () => {
 		if (login !== "" && password !== "") {
 			try {
 				const { data } = await axios.post(
-					`https://payl-dev.10web.cloud/wp-json/user-route/generate_auth_cookie/?email=${login}&password=${password}`
+					`${BASE_URL}/wp-json/user-route/generate_auth_cookie/?email=${login}&password=${password}`
 				);
 				if (data?.cookie) {
 					navigate("/");
