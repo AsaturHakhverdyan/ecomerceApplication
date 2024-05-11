@@ -23,6 +23,7 @@ function Main() {
 			const { data } = await axios.get(
 				`${BASE_URL}/wp-json/get/products?order=${sort}&orderby=${sortByPrice}`
 			);
+			console.log(`${BASE_URL}/wp-json/get/products?order=${sort}&orderby=${sortByPrice}`)
 			setFilteredData(data.products);
 			setData(data.products);
 		})();
@@ -31,7 +32,7 @@ function Main() {
 	useEffect(() => {
 		(async () => {
 			const { data } = await axios.get(
-				`${BASE_URL}/wp-json/product/categories`
+				`${BASE_URL}/wp-json/get/categories`
 			);
 			setSetCategories(data);
 		})();
